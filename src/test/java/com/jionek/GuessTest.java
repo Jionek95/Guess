@@ -10,13 +10,13 @@ public class GuessTest {
         Guess game = new Guess();
         int randomNum = game.getRandomNum();
         String msg = game.guess(randomNum);
-        Assertions.assertEquals("You won", msg);
+        Assertions.assertEquals("You guessed right", msg);
     }
 
-//    @Test
-//    public void simpleWinGuess(){
-//        Guess game = new Guess();
-//        String msg = game.guess();
-//        Assertions.assertEquals("You won", msg);
-//    }
+    @Test
+    public void oneWrongGuess(){
+        Guess game = new Guess();
+        String msg = game.guess(-1);
+        Assertions.assertEquals("You didn't guess", msg);
+    }
 }
