@@ -14,9 +14,16 @@ public class GuessTest {
     }
 
     @Test
-    public void oneWrongGuess(){
+    public void oneWrongNegativeGuess(){
         Guess game = new Guess();
         String msg = game.guess(-1);
+        Assertions.assertEquals("You didn't guess", msg);
+    }
+    @Test
+    public void oneWrongPositiveGuess(){
+        Guess game = new Guess();
+        int randomNum = game.getRandomNum();
+        String msg = game.guess(randomNum + 1);
         Assertions.assertEquals("You didn't guess", msg);
     }
 }
