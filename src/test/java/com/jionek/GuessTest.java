@@ -49,4 +49,12 @@ public class GuessTest {
         int sumOfRndNumCount = Arrays.stream(rndNumCount).sum();
         Assertions.assertEquals(10, sumOfRndNumCount);
     }
+
+    @Test
+    public void testThreeWrongGuesses(){
+        game.guess(-1);
+        game.guess(-1);
+        String msg = game.guess(-1);
+        Assertions.assertEquals("You didn't guess and you've had three guesses", msg);
+    }
 }
