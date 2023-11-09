@@ -2,6 +2,7 @@ package com.jionek;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -35,12 +36,12 @@ public class GuessTest {
         Assertions.assertEquals("You didn't guess", msg);
     }
 
-    @Test
+    @RepeatedTest(50)
     public void testRandomNumGeneration(){
         // 1 2 3 4 5 6 7 8 9 10
         // 1 1 1 1 0 0 1 0 1 1
         int[] rndNumCount = new int[10];
-        for (int counter = 0; counter<100; counter++){
+        for (int counter = 0; counter<90; counter++){
             Guess localGame = new Guess();
             int localRandomNum = localGame.getRandomNum();
             rndNumCount[localRandomNum-1] = 1;
