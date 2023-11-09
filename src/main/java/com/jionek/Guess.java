@@ -14,8 +14,6 @@ public class Guess {
     }
 
     public int getRandomNum() {
-        Random random = new Random();
-        int randomNum = random.nextInt(1,11);
         return randomNum;
     }
 
