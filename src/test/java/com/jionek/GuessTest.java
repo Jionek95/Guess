@@ -66,12 +66,12 @@ public class GuessTest {
         String msg = game.guess(correctNum);
         Assertions.assertEquals("You guessed right", msg);
     }
-//
-//    @Test
-//    public void testOneWrongAndOneRightGuesses(){
-//        game.guess(-1);
-//        int correctNum = game.getRandomNum();
-//        String msg = game.guess(correctNum);
-//        Assertions.assertEquals("You guessed right", msg);
-//    }
+
+    @Test
+    public void testOneWrongAndOneRightGuesses(){
+        game.guess(-1);
+        int correctNum = game.getRandomNum();
+        String msg = game.guess(correctNum);
+        Assertions.assertEquals("You guessed right", msg);
+    }
 }
