@@ -13,7 +13,7 @@ public class Guess {
 
     public String guess(int guessedNumber) {
         numberOfGuesses++;
-        if (numberOfGuesses == 3){
+        if (numberOfGuesses == 3 && guessedNumber != getRandomNum()){
             return "You didn't guess and you've had three guesses";
         }
         return guessedNumber == getRandomNum() ? "You guessed right" : "You didn't guess";

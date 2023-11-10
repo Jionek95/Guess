@@ -57,4 +57,21 @@ public class GuessTest {
         String msg = game.guess(-1);
         Assertions.assertEquals("You didn't guess and you've had three guesses", msg);
     }
+
+    @Test
+    public void testTwoWrongAndOneRightGuesses(){
+        game.guess(-1);
+        game.guess(-1);
+        int correctNum = game.getRandomNum();
+        String msg = game.guess(correctNum);
+        Assertions.assertEquals("You guessed right", msg);
+    }
+//
+//    @Test
+//    public void testOneWrongAndOneRightGuesses(){
+//        game.guess(-1);
+//        int correctNum = game.getRandomNum();
+//        String msg = game.guess(correctNum);
+//        Assertions.assertEquals("You guessed right", msg);
+//    }
 }
