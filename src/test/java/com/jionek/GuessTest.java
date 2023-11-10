@@ -56,7 +56,7 @@ public class GuessTest {
         game.guess(-1);
         game.guess(-1);
         String msg = game.guess(-1);
-        Assertions.assertEquals("You didn't guess and you've had 3 tries", msg);
+        Assertions.assertEquals("You didn't guess and you've had 3 tries GAME OVER!!!", msg);
     }
 
     @Test

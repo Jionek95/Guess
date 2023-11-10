@@ -21,9 +21,11 @@ public class Guess {
 
         if (numberOfGuesses > 3){
             endMsg = "There's limit of 3 tries. Your game is over";
-        } else if (guessedNumber != getRandomNum()) {
-            endMsg = loseMsg;
-        } else endMsg = winMsg;
+        } else if (numberOfGuesses == 3 && guessedNumber != getRandomNum()) {
+            endMsg = loseMsg + " GAME OVER!!!";
+        } else if (guessedNumber == getRandomNum()) {
+            endMsg = winMsg;
+        } else endMsg = loseMsg;
 
         return endMsg;
     }
