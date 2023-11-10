@@ -21,7 +21,7 @@ public class GuessTest {
     public void simpleWinGuess(){
         int randomNum = game.getRandomNum();
         String msg = game.guess(randomNum);
-        Assertions.assertEquals("You guessed right", msg);
+        Assertions.assertEquals("You guessed in 1 try", msg);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class GuessTest {
         game.guess(-1);
         int correctNum = game.getRandomNum();
         String msg = game.guess(correctNum);
-        Assertions.assertEquals("You guessed right", msg);
+        Assertions.assertEquals("You guessed in 3 tries", msg);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class GuessTest {
         game.guess(-1);
         int correctNum = game.getRandomNum();
         String msg = game.guess(correctNum);
-        Assertions.assertEquals("You guessed right", msg);
+        Assertions.assertEquals("You guessed in 2 tries", msg);
     }
 
 }
