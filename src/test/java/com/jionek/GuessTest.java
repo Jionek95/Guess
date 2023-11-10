@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 public class GuessTest {
 
+    public static final int NUM_OF_RANDOM_GENERATIONS = 90;
     private Guess game;
 
     @BeforeEach
@@ -41,7 +42,7 @@ public class GuessTest {
         // 1 2 3 4 5 6 7 8 9 10
         // 1 1 1 1 0 0 1 0 1 1
         int[] rndNumCount = new int[10];
-        for (int counter = 0; counter<90; counter++){
+        for (int counter = 0; counter< NUM_OF_RANDOM_GENERATIONS; counter++){
             Guess localGame = new Guess();
             int localRandomNum = localGame.getRandomNum();
             rndNumCount[localRandomNum-1] = 1;
@@ -74,4 +75,5 @@ public class GuessTest {
         String msg = game.guess(correctNum);
         Assertions.assertEquals("You guessed right", msg);
     }
+
 }
