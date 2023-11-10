@@ -16,7 +16,9 @@ public class Guess {
         if (numberOfGuesses == 3 && guessedNumber != getRandomNum()){
             return "You didn't guess and you've had three guesses";
         }
-        return guessedNumber == getRandomNum() ? "You guessed right" : "You didn't guess";
+        String tryWord = numberOfGuesses == 1 ? "try" : "tries";
+        String winMsg = String.format("You guessed in %d %s", numberOfGuesses, tryWord);
+        return guessedNumber == getRandomNum() ? winMsg : "You didn't guess";
     }
 
     public int getRandomNum() {
