@@ -13,11 +13,12 @@ public class Guess {
 
     public String guess(int guessedNumber) {
         numberOfGuesses++;
-        if (numberOfGuesses == 3 && guessedNumber != getRandomNum()){
-            return "You didn't guess and you've had three guesses";
-        }
         String tryWord = numberOfGuesses == 1 ? "try" : "tries";
         String winMsg = String.format("You guessed in %d %s", numberOfGuesses, tryWord);
+
+        if (numberOfGuesses == 3 && guessedNumber != getRandomNum()){
+            return String.format("You didn't guess and you've had %d %s", numberOfGuesses, tryWord);
+        }
         return guessedNumber == getRandomNum() ? winMsg : "You didn't guess";
     }
 
