@@ -13,13 +13,19 @@ public class Guess {
 
     public String guess(int guessedNumber) {
         numberOfGuesses++;
+
+        String endMsg;
         String tryWord = numberOfGuesses == 1 ? "try" : "tries";
         String winMsg = String.format("You guessed in %d %s", numberOfGuesses, tryWord);
+        String loseMsg = String.format("You didn't guess and you've had %d %s", numberOfGuesses, tryWord);
 
-        if (numberOfGuesses == 3 && guessedNumber != getRandomNum()){
-            return String.format("You didn't guess and you've had %d %s", numberOfGuesses, tryWord);
-        }
-        return guessedNumber == getRandomNum() ? winMsg : "You didn't guess";
+        if (numberOfGuesses > 3){
+            endMsg = "There's limit of 3 tries. Your game is over";
+        } else if (guessedNumber != getRandomNum()) {
+            endMsg = loseMsg;
+        } else endMsg = winMsg;
+
+        return endMsg;
     }
 
     public int getRandomNum() {
