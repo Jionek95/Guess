@@ -24,7 +24,13 @@ public class Guess {
         } else if (numberOfGuesses == 3 && guessedNumber != getRandomNum()) {
             endMsg = loseMsg + " GAME OVER!!!";
         } else if (guessedNumber != getRandomNum()) {
-            endMsg = loseMsg;
+            String lowHighMsg = null;
+            if (guessedNumber < getRandomNum()){
+                lowHighMsg = ". You're too low";
+            } else if (guessedNumber > getRandomNum()) {
+                lowHighMsg = ". You're too high";
+            }
+            endMsg = loseMsg + lowHighMsg;
         } else endMsg = winMsg;
 
         return endMsg;

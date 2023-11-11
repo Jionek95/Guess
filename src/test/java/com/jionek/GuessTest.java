@@ -27,14 +27,14 @@ public class GuessTest {
     @Test
     public void oneWrongNegativeGuess(){
         String msg = game.guess(-1);
-        Assertions.assertEquals("You didn't guess and you've had 1 try", msg);
+        Assertions.assertEquals("You didn't guess and you've had 1 try. You're too low", msg);
     }
 
     @Test
     public void oneWrongPositiveGuess(){
         int randomNum = game.getRandomNum();
         String msg = game.guess(randomNum + 1);
-        Assertions.assertEquals("You didn't guess and you've had 1 try", msg);
+        Assertions.assertEquals("You didn't guess and you've had 1 try. You're too high", msg);
     }
 
     @RepeatedTest(50)
