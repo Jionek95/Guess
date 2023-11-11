@@ -40,10 +40,22 @@ public class Guess {
         return randomNum;
     }
 
-//    public static void main(String[] args) {
-//
-//        for (int count = 0; count<20; count++) {
-//            System.out.println("My random number NO. " + count + " is : " + getRandomNum());
-//        }
-//    }
+    public static void main(String[] args) {
+
+        Guess game = new Guess();
+        boolean shouldContinue = true;
+
+        do {
+            String input = System.console().readLine("Enter a number: ");
+            if (input.contains("q")){
+                return;
+            }
+            String output = game.guess(Integer.parseInt(input));
+            System.out.println(output);
+            if (output.contains("guessed") || output.toLowerCase().contains("over")){
+                shouldContinue = false;
+            }
+        } while (shouldContinue);
+
+    }
 }
