@@ -44,6 +44,7 @@ public class Guess {
 
         Guess game = new Guess();
         boolean shouldContinue = true;
+        System.out.println("Welcome to Guessing_Game!");
 
         do {
             String input = System.console().readLine("Enter a number: ");
